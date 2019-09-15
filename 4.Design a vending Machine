@@ -1,5 +1,5 @@
 Vending machine:
-1. Accepts coins
+1. Accepts coins and count
 2. Allow user to select products
 3. Allow user to take refund by canceling the request.
 4. Return selected product and remaining changes if any
@@ -10,12 +10,57 @@ User:
 3. cancel the request
 3. get product and changes
 
+Product:
+store product information: productName, price, productID, availablity
+————————————————————————————————————————————————————————
 Class VendingMachine{
   List<Product> products;
   float inputCoins;
+  float sumOfCoins, change;
   
-  countCoins(inputCoins){
-    return sum(inputCoins)
+  showCatalog(){
+    System.out.println(products);
   }
-
+  countCoins(inputCoins){
+    return sumOfCoins = sum(inputCoins)
+  }
+  setSelected(productID){
+    return Product.productName, Product.price, Product.availability;
+  }
+  removeSelected(productID){
+    System.out.println("Product removed");
+    showCatalog();
+  }
+  returnSelected(productID){
+    change = sumOfCoins - Product.price
+    // pushing the paid product out and the changes if any
+  }
+}
+————————————————————————————————————————————————————————
+Class User{
+  float putCoins, coinSum;
+  int productID;
+  Product productDetails;
+  
+  putIntoCoins(putCoins){
+    coinSum = VendingMachine.countCoins(putCoins)
+  }
+  
+  chooseProduct(productID){
+    VendingMachine.showCatalog();
+    productDetails = VendingMachine.setSelected(productID)
+  }
+  
+  cancelProduct(productID){
+    VendingMachine.removeSelected(productID)
+  }
+  buyProduct(productID){
+    VendingMachine.returnSelected(productID)
+  }
+}
+————————————————————————————————————————————————————————
+Class Product{
+  string productName;
+  int price, productID;
+  boolean availablity; 
 }
