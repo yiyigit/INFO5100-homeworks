@@ -1,0 +1,46 @@
+TrafficLight:
+1. change colors in red, yellow, green.
+
+TrafficLightController:
+1.control TrafficLight's state
+
+Car:
+1.respond to TrafficLight's different signs.
+------------------------------------------------
+Class: TrafficLight
+State：Red, Green, Yellow
+Behavior: YellowChangeToRed(){//yellow light changes to red light
+  Car.brake()
+}
+Behavior:RedChangeToGreen(){    //red light changes to green light
+  Car.accelerate()
+}
+Behavior:GreenChangeTnYellow(){  //green light changes to yellow light
+  Car.slowDown()
+}
+
+Class: TrafficLightController
+State: timeToChange
+Behavior: simulateTime(timeToChange){
+  if (// yellow light time up){
+  TrafficLight.YellowChangeToRed()
+  }
+  elif(// red light time up){
+  TrafficLight.RedChangeToGreen()
+  }
+  else{ // green light time up){
+  TrafficLight.GreenChangeTnYellow()
+  }
+}
+
+class:Car 
+State: stopped, running
+Behavior:slowDown(){
+//car slows down when the drive brakes until it stops
+}
+Behavior:accelerate(){
+//car accelerates when the drive speed up
+}
+Behavior:brake(){
+//car into full stop
+}
