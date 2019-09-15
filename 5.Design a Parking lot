@@ -1,0 +1,35 @@
+
+————————————————————————————————————————————————————————
+Class ParkingLot{
+  List<Spots> spots;
+  int level, occupiedNum, totalNum;
+  
+  isAvailable(){
+    if (occupiedNum + 1.compareTo(totalNum)<=0){
+      }return true;
+    } return false;
+  }
+
+————————————————————————————————————————————————————————    
+Class Vehicle{
+  string licensePlate;
+  float size;
+  
+  enterParkingLot(){
+    if(ParkingLot.isAvailable()){   //enter
+    } else{                         //leave
+    }
+  }
+ 
+  canFit(){
+    if (!Spot.occupied && Vehicle.size.compareTo(Spot.size)<=0){
+        }return true;
+      } return false;
+  }
+}
+————————————————————————————————————————————————————————  
+Class Spot{
+  float size;
+  int level;
+  boolean occupied;
+}
