@@ -1,0 +1,90 @@
+Design a Car Rental System will include renter, credit card, car service, cars.
+Renter:
+1.search cars based on parameters( rentDate, returnDate, seats number, brand, used mileage)
+2.book the car
+3.cancel booking
+
+CreditCard:
+1.user uses credit card to pay
+2.check if the card is expired
+3.refund if cancellation happens
+
+CarService:
+1.search cars based on parameters( rentDate, returnDate, seats number, brand, used mileage) and return available cars back to users
+2.after user books a car, change chosen cars state into unavailable and return booking details
+3.after user cancels booking, change its car state into available and refund
+
+Cars:
+have states of seats number, brand, used mileage, priceForRent,carID, Availablility
+————————————————————————————
+Class Renter {
+	string brand, renterId, phoneNumber, creditCardDetails;
+	Date rentDate, returnDate;
+	int seatsNumber, usedMileage;
+
+	searchCars(rentDate, returnDate, seatsNumber, brand, usedMileage) {
+	  List<Cars> cars = CarService.search(rentDate, returnDate, seatsNumber, brand, usedMileage);	    //display required cars to user
+	}
+  
+	bookCar(){
+		CreditCard.pay(cardNumber, price)
+		bookingDetails = CarService.bookCar (rentDate, returnDate);
+  }
+
+	cancel(bookingDetails) {
+		CarService.cancel(bookingDetails);
+	}
+}
+————————————————————————————
+Class CreditCard{
+	string name, cardNumber, cardType, expiryDate;
+	float price;
+  
+  pay(cardNumber, price) {
+		if isCardExpired( ):
+			System. out. println (“card is expired!”)
+		else:
+			//bank process the payment
+			System. out. println (“payment succeed”)
+	}
+	isCardExpired( ){
+		Date today = new Date()
+		if (today is later than expireDate){
+			return true;
+		}
+		return false;
+	}
+	refund(cardNumber, price) {
+		      //bank refund this card with this amount of money
+	}
+
+}
+—————————————————————————————
+Class CarService{
+	List<Cars> cars;
+	List<Cars> availableCars;
+
+	search(rentDate, returnDate, seatsNumber, brand, usedMileage){
+		// search all cars with according parameters
+		return availableCars;	
+	}
+
+	bookCar( rentDate, returnDate){
+		//book the cars and change the state of booked cars
+		Cars.isAvailable = false
+		return Cars.brand, Cars.seatsNumber, Cars.usedMileage, Cars.priceForRent
+	}
+	
+	cancel(bookingDetails){
+    //find the car according to bookingDetails
+		Cars.isAvailable = true
+		CreditCard.refund(cardNumber, price)	
+	}
+}
+
+—————————————————————————————
+Class Cars{
+	int seatsNumber, used mileage, priceForRent
+	string brand,carID
+  Boolean isAvailable = true;
+}
