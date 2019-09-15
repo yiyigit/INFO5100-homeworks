@@ -1,0 +1,69 @@
+Design a Course Registration Platform
+Student:
+1.browse courses 
+2.register courses
+3.drop courses
+
+Database:
+1.store all the courses and their availability. 
+2.if the course isn’t full, After student registers, reduce this course’s availability. if the course is full, put student into waitlist.
+After student drops, increase this course’s availability and notice the first person in waitlist
+
+Courses:
+store all courses information:course Name, eligible for which College, eligible for which Year student, max Capacity For Class
+————————————————————————————
+Class Student {
+	string Name, ID, college, year
+	browse( ){
+		coursesAvailable = Database.search(college, year)
+}
+  register(courseName){
+    Database.addStudentToCourse(name)
+    }
+  drop(courseName){
+    Database.removeStudent(name)
+  }
+
+}
+—————————————————————————————
+Class Database{
+	List<Course> availableCourses
+	List<Course> courses
+	List<name> studentNames,waitList
+	search( ){
+		for (c : courses){
+			if c.check(college, year):
+				availableCourses.append(c)
+		return availableCourses
+}
+
+  addStudentToCourse(name){
+    if Course.availability(courseName){
+      studentNames.append(name)
+      Course.currentStudentNum +=1
+    } else{
+      waitList.append(name)
+    }
+  }
+  removeStudent(name){
+    studentNames.remove(name)
+    Course.currentStudentNum -=1
+  }
+}
+—————————————————————————————
+Class Course{
+	string courseName, eligibleCollege, eligibleYear;
+	int maxCapacityForClass,currentStudentNum;
+	
+  check(college, year){
+		if (eligibleCollege.compareTo(college) == 0 && eligibleYear.compareTo(year)){
+			return true	
+		} return false
+    
+   availability(courseName){
+    if (currentStudentNum + 1 > maxCapacityForClass){
+      return false
+      } return true
+	  }
+
+}
