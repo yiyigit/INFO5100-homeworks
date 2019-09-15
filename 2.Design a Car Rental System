@@ -16,6 +16,7 @@ CarService:
 
 Cars:
 have states of seats number, brand, used mileage, priceForRent,carID, Availablility
+//From this assignment onwards, I am gonna put states and behaviors inside the class. //
 ————————————————————————————
 Class Renter {
 	string brand, renterId, phoneNumber, creditCardDetails;
