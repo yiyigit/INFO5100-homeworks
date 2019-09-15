@@ -1,0 +1,21 @@
+Vending machine:
+1. Accepts coins
+2. Allow user to select products
+3. Allow user to take refund by canceling the request.
+4. Return selected product and remaining changes if any
+
+User:
+1. put in coins
+2. choose product
+3. cancel the request
+3. get product and changes
+
+Class VendingMachine{
+  List<Product> products;
+  float inputCoins;
+  
+  countCoins(inputCoins){
+    return sum(inputCoins)
+  }
+
+}
