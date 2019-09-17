@@ -1,98 +1,109 @@
+package Assignment2;
+
 /**
- * Complete all TODO
- * Submit before 22nd September 12:00pm
+ * Submit it on or before 22nd September 2019 , 12:00 pm
  */
 public class Assignment2 {
-    private static final String ORGANISATION = "Northeastern";
-    private static final String[] STRS = new String[] {
-            //firstname,lastname,age,salary,email,designation
-            "John,Doe,24,5400,johndoe@gmail.com,Engineer",
-            "Sara,Jones,26,6300,sarajones@gmail.com,TechnicalRecruiter",
-            "Noah,Trevor,32,5300,noahtrevor@gmail.com,Writer",
-            "Jill,Meyer,34,6800,jillmeyer@gmail.com,Manager",
-            "Chris,Strat,36,7600,chrisstrat@gmail.com,Director",
-            "Ching,Chi,25,4000,chingchi@gmail.com,Developer",
-            "Yue,Hui,28,4900,yuehui@gmail.com,Tester",
-            "Amit,Agarwal,27,5700,yuehui@gmail.com,SeniorDeveloper",
-            "Tianyu,Wang,26,4500,tianyuwang@gmail.com,Researcher",
-            "Ram,Menon,29,5700,rammenon@gmail.com,DataScientist"
-    };
-
-    private final Employee[] employees = new Employee[10];
-
-    class Employee implements Comparable<Employee> {
-        private String firstName;
-        private String lastName;
-        private int age;
-        private int salary;
-        private String email;
-        private String designation;
-        private String org;
-
-        Employee(String firstName, String lastName, int age, int salary, String email, String designation, String org) {
-            // @TODO
-            // initialize all members here
-        }
-
-        // generate getter setters for all Employee members
-
-        @Override
-        public int compareTo(Employee o) {
-            // @TODO
-            // compare employee by their salary, if salaries are equal, compare by age
-            return 0;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            // @TODO
-            // implement equals for Employee
-            return true;
-        }
-
-        @Override
-        public int hashCode() {
-            // @TODO
-            // implement hashcode for employee
-            return 0;
-        }
+    /*
+        This method should return the sum of salaries of employees having salary greater than 5000
+        Note: Employee array is passed, not employee
+     */
+    public double salaryGreaterThanFiveThousand(Employee[] employees) {
+        // @TODO
+        return 0.0;
     }
 
-    public void initializeEmployees() {
+    
+    /*
+        This method should print either "Fizz", "Buzz" or "FizzBuzz"
+        "Fizz" - if id of employee is divisible by 3
+        "Buzz" - if id of employee is divisible by 5
+        "FizzBuzz" - if id of employee is divisible by both 3 and 5
+     */
+    public void fizzBuzz(Employee employee) {
         // @TODO
-        // use STRS to create employee objects and store them in employees array
     }
 
-    public int sumOfSalariesGreaterThanFiveThousands() {
+    
+    /*
+        This method should calculate tax for an employee in dollars
+        If salary of employee is less than or equal to 2500, tax should be 10%
+        If salary of employee is greater than 2500 but less than or equal to 5000, tax should be 25%
+        If salary of employee is greater than 5000, tax should be 35%
+    */
+    public double calculateTax(Employee employee) {
         // @TODO
-        // calculate the sum of salaries of employees having salary greater than 5000
+        return 0.0;
+    }
+    
+    
+    /*
+        We are given two employee objects.
+        Implement this method to swap salaries of employees
+    */
+    public void swap(Employee firstEmployee, Employee secondEmployee) {
+        // @TODO
+    }
+
+    
+    /*
+        Return number of employees whose age is greater than 50
+        Note: Employee array is passed, not employee
+     */
+    public int employeesAgeGreaterThan50(Employee[] employees) {
+        // @TODO
         return 0;
     }
 
-    public void swapSalaries() {
+    
+    /*
+        Implement this method to reverse firstName of employee.
+        Ex. Before: employee.getFirstName() -> "John"
+        After : employee.getFirstName() -> "nhoJ"
+     */
+    public void reverseFirstName(Employee employee) {
         // @TODO
-        // swap salary of even numbered employee with odd numbered employee
-        // swap salary of employees[0] with employees[1], employees[2] with employees[3] and so on..
     }
 
-    public void customSort() {
+    
+    /*
+        Print "true" if employee's first name contain one or more digits
+        Print "false" if employee's first name doesn't contain any digit
+        Ex: employee.getFirstName() -> "ha8l" == true
+        employee.getFirstName() -> "hail" == false
+     */
+    public void isContainDigit(Employee employee) {
         // @TODO
-        // sort employees array on the basis of firstName and print
-        for(Employee employee : employees) {
-            System.out.println(employee.firstName);
-        }
-
-        // @TODO
-        // sort employees array on the basis of age and print
-
-        for(Employee employee : employees) {
-            System.out.println(employee.firstName);
-        }
     }
 
-    public static void main(String[] args) {
-        Assignment2 assignment2 = new Assignment2();
-        // you can verify/test your code here
+    
+     /*
+        Write a method to raise an employee's salary to three times of his/her original salary.
+        Eg: original salary was 1000/month. After using this method, the salary is 3000/month.
+        DO NOT change the input in this method.
+        Try to add a new method in Employee class: public void raiseSalary(double byPercent) 
+        Call this new method.
+     */
+    public void tripleSalary(Employee employee) {
+        // @TODO
     }
-
+    
+    
+    //Additional question for extra credit
+    /*
+        Implement this method to convert String[] to employees array.
+        Ex: String[] employees = new String[]{"1,John,24,7500", "2,Hail,28,7899.90"};
+        This String array of length 2 contains 2 employees in form of string, where
+        id = 1
+        firstName=John
+        age=24
+        salary=7500
+        convert each string to employee object.
+        Hint: Use String methods. Refer : https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
+     */
+    public Employee[] createEmployees(String[] employeesStr) {
+        Employee[] employees = new Employee[employeesStr.length];
+        // @TODO
+        return employees;
+    }
 }
