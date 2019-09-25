@@ -107,7 +107,7 @@ public class Assignment2 {
         for (char c : employee.getFirstName().toCharArray()){
             if(Character.isDigit(c)){
                 System.out.println("true");
-                break;
+                break; //This line should be return instead of break;
             }
         } System.out.println("false");
 
