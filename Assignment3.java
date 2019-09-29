@@ -262,17 +262,18 @@ public String convert(String s, int numRows){
 
 -----------------------------------------------------------------------------------------------------------------------
 
-Q9. Explain Encapsulation with an example. (Write at least 30-40 words).
-Encapsulation is wrapping data inside and keeping them private but only provides public methods to access.
-For example, if we have a class to store personal information of our professors. We set professors' names, phone number, age
-to be private.We use setName(), setPhoneNumber(), setAge() methods to set up and control how to manage dataAnd then we provide 
-getName(), getPhoneNumber(), getAge() methods to get the information outside the class.
+//Q9. Explain Encapsulation with an example. (Write at least 30-40 words).
+//Encapsulation is wrapping data inside and keeping them private but only provides public methods to access.
+//For example, if we have a class to store personal information of our professors. We set professors' names, phone number, age
+//to be private.We use setName(), setPhoneNumber(), setAge() methods to set up and control how to manage dataAnd then we provide 
+//getName(), getPhoneNumber(), getAge() methods to get the information outside the class.
 
 -----------------------------------------------------------------------------------------------------------------------
 
-Q10. What is the difference between Encapsulation and Abstraction
-Encapsulation is a way to protect object from tempering. It sets all the states private so it can only be accessed inside the class.
-Abstraction is 
+//Q10. What is the difference between Encapsulation and Abstraction
+//Encapsulation is to hide internal details of how an object does something for security reasons.
+// it is a way to protect object from tempering. It sets all the states private so it can only be accessed inside the class.
+//Abstraction is to show essential informaion and hide unwanted details. It allows focussing on what the information object must contain.
 
 
 
