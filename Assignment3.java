@@ -276,4 +276,3 @@ public String convert(String s, int numRows){
 //Abstraction is to show essential informaion and hide unwanted details. It allows focussing on what the information object must contain.
 
 
-
