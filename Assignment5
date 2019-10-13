@@ -63,5 +63,37 @@ class Contractor extends Employee{
 4.exception
 
 class MyIndexOutOfBoundException extends Exception{
-
+	int lowerBound, upperBound, index;
+	
+	MyIndexOutOfBoundException(int current, int lowest, int highest) {
+		this.index = current;
+    		this.lowerBound = lowest;
+    		this.upperBound = highest;
+  	}
+	public String toString() {
+    		return "Error Message: Index: " + index + ", but Lower bound: " 
+		+ this.lowerBound + ", Upper Bound: "+ this.upperBound;
+  	}
+	
+	public static void main(String[] args) {
+    		int[] nums = new int[]{0,1,2,3,4,5,6,7,8,9};
+		while (true) {
+		    int i = 0;
+		    try {
+		    	System.out.println(nums[i++])
+			if(i>=nums.length){
+				throw new MyIndexOutOfBoundException(i, 0, nums.length-1);
+			}
+		    } 
+		    catch (MyIndexOutOfBoundException e) {
+			System.out.println(e);
+		    }
+		 }
+	}
 }
+
+	
+
+5.pets
+
+
