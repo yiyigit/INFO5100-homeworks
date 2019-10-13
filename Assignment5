@@ -1,0 +1,67 @@
+
+1.Explain the difference between final and finally in Java 8.
+	final is a modifier that prohibits changes afterwards. When a variable is declared final, it cannot be changed after it’s initialized;
+When a method is declared final, it cannot be overriden in the child class; When a class is declared final, it cannot be extended by another class.
+	finally is a block to do an operation in the end despite of an exception or not.The block always executes when the try block exits.
+
+2.Create a class called Number. Write a method called count() which can calculate quotient of two integers 
+and use try...catch to deal with all possible exception.
+
+public class Number {
+    public void count(int a, int b) {
+        try{
+            int res = a / b;
+            System.out.println(res);
+        }
+        catch(Exception e){
+            System.out.println("not allowed");
+        }
+    }
+}
+
+3.Create one superclass called Employee and two subclasses – Contractor and FullTime. 
+Both subclasses have common properties to share, like the name of the employee and the the amount of money the person will be 
+paid per hour. There is one major difference between contractors and full-time employees – the time they work for the company. 
+Full-time employees work constantly 8 hours per day and the working time of contractors may vary.
+
+abstract class Employee{
+    private String name;
+    private int paymentPerHour;
+    public Employee(String name, int paymentPerHour){
+        public abstract int calsulate Salary();
+        public String getName(){
+            return name;
+        };
+        public void setName(String name){
+            this.name = name;
+        }
+        public int getPaymentPerHour(){
+            return paymentPerHour;
+        }
+        public void setPaymentPerHour(int paymentPerHour){
+            this.paymentPerHour = paymentPerHour;
+        }
+    }
+}
+
+class FullTimeEmployee extends Employee{
+    private int workingHour = 8;
+    public FullTimeEmployee(String name, int paymentPerHour){
+        return paymentPerHour* this.workingHours;
+    }
+}
+
+class Contractor extends Employee{
+    private int workingHours;
+    public Contractor(String name, int paymentPerHour, int workingHours){
+        public int calculateSalary(){
+            return paymentPerHour* workingHours;
+        }
+    }
+}
+
+4.exception
+
+class MyIndexOutOfBoundException extends Exception{
+
+}
