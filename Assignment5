@@ -96,4 +96,153 @@ class MyIndexOutOfBoundException extends Exception{
 
 5.pets
 
+public enum Sex{
+    MALE("MALE"),
+    FEMALE("FEMALE"),
+    SPAYED("SPAYED"),
+    NEUTERED("NEUTERED");
+
+    private String name;
+
+    Sex(String s){
+        this.name = s;
+    }
+
+    public String getSex(){
+        return this.name;
+    }
+
+}
+
+public class Pet {
+    private String name;
+    private String ownerName;
+    private String color;
+    protected Sex sex;
+
+    public Pet(String name, String ownerName, String color) {
+        this.name = name;
+        this.ownerName = ownerName;
+        this.color = color;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    void setSex(int sexid) {
+        if (sexid == 1) {
+            this.sex = Sex.MALE;
+        } else if (sexid == 2) {
+            this.sex = Sex.FEMALE;
+        } else if (sexid == 3) {
+            this.sex = Sex.SPAYED;
+        } else if (sexid == 4) {
+            this.sex = Sex.NEUTERED;
+        } else {
+            System.out.println("sex id should be in range of 1 to 4");
+        }
+
+    }
+
+    String getSex() {
+        return sex.getSex();
+    }
+
+    public String toString() {
+        return getName() + "owned by " + getOwnerName() + "\n"+
+                "Color: " + getColor() +"\n"+
+                "Sex: " + getSex();
+    }
+
+
+    public static void main(String[] args) {
+        Pet a = new Pet("Spot", "Mary", "Black and White");
+        a.setSex(1);
+        System.out.println(a.toString());
+
+
+    }
+}
+
+public interface Boardable {
+    void setBoardStart(int month, int day, int year);
+    void setBoardEnd(int month, int day, int year);
+    boolean boarding(int month, int day, int year);
+}
+
+public class Cat extends Pet implements Boardable{
+    private String hairLength;
+    private int start_month, start_day, start_year;
+    private int end_month, end_day, end_year;
+
+    String getHairLength(){
+        return hairLength;
+    };
+    Cat (String name, String ownerName, String color, String hairLength){
+        super(name, ownerName, color);
+        this.hairLength = hairLength;
+    }
+    public String toString(){
+        return  "CAT:" + "\n" +
+                super.getName() + "owned by " + super.getOwnerName() + "\n"+
+                "Color: " + super.getColor() +"\n"+
+                "Sex: " + super.getSex();
+
+    }
+
+    public void setBoardStart(int month, int day, int year){
+        if (month >= 1 && month <= 12){
+            start_month = month;
+        }
+        if (day >= 1 && day <= 31) {
+            start_day = day;
+        }
+        if (year >= 1000 && year <= 9999) {
+            start_year = year;
+        }
+
+    }
+    public void setBoardEnd(int month, int day, int year){
+        if (month >= 1 && month <= 12){
+            end_month = month;}
+        if (day >= 1 && day <= 31) {
+            end_day = day;}
+        if (year >= 1000 && year < 10000) {
+            end_year = year; }
+
+    }
+    public boolean boarding(int month, int day, int year){
+        if(year > start_year && year < end_year){
+            return true;
+        }
+        if(year == start_year && month > start_month || year == end_year && month < end_month){
+                return true;
+             }
+        if(month == start_month && day >= start_day || month == end_month && day<= end_day){
+                return true;
+            }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Cat a = new Cat("Tom", "Bob", "Black", "short");
+        a.setSex(3);
+        System.out.println(a.toString());
+        a.setBoardStart(1,1,2001);
+        a.setBoardEnd(2,2,2002);
+        System.out.println(a.boarding(1,28,2002));
+
+    }
+
+}
+
 
