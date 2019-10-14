@@ -95,7 +95,7 @@ class MyIndexOutOfBoundException extends Exception{
 	
 
 5.pets
-
+-------------------------Sex.java------------------------------------------
 public enum Sex{
     MALE("MALE"),
     FEMALE("FEMALE"),
@@ -113,7 +113,7 @@ public enum Sex{
     }
 
 }
-
+-------------------------Pet.java------------------------------------------
 public class Pet {
     private String name;
     private String ownerName;
@@ -172,13 +172,13 @@ public class Pet {
 
     }
 }
-
+-------------------------Boardable.java------------------------------------------
 public interface Boardable {
     void setBoardStart(int month, int day, int year);
     void setBoardEnd(int month, int day, int year);
     boolean boarding(int month, int day, int year);
 }
-
+-------------------------Cat.java------------------------------------------
 public class Cat extends Pet implements Boardable{
     private String hairLength;
     private int start_month, start_day, start_year;
@@ -242,6 +242,64 @@ public class Cat extends Pet implements Boardable{
         System.out.println(a.boarding(1,28,2002));
 
     }
+ -------------------Dog.java--------------------------------   
+ public class Dog  extends Pet implements Boardable{
+    private String size;
+    Dog (String name, String ownerName, String color, String size){
+        super(name, ownerName, color);
+        this.size = size;
+
+    }
+    
+    public String getSize(){
+        return size;
+    }
+    public String toString(){
+        return  "DOG:" + "\n" +
+                super.getName() + "owned by " + super.getOwnerName() + "\n"+
+                "Color: " + super.getColor() +"\n"+
+                "Size: " + getSize();
+
+    }
+
+    public void setBoardStart(int month, int day, int year){
+        if (month >= 1 && month <= 12){
+            start_month = month;
+        }
+        if (day >= 1 && day <= 31) {
+            start_day = day;
+        }
+        if (year >= 1000 && year <= 9999) {
+            start_year = year;
+        }
+
+    }
+
+    public void setBoardEnd(int month, int day, int year){
+        if (month >= 1 && month <= 12){
+            end_month = month;}
+        if (day >= 1 && day <= 31) {
+            end_day = day;}
+        if (year >= 1000 && year < 10000) {
+            end_year = year; }
+
+    }
+
+    public boolean boarding(int month, int day, int year){
+        if(year > start_year && year < end_year){
+            return true;
+        }
+        if(year == start_year && month > start_month || year == end_year && month < end_month){
+            return true;
+        }
+
+        if(month == start_month && day >= start_day || month == end_month && day<= end_day){
+            return true;
+        }
+        return false;
+    }
+}
+
 
 }
 
