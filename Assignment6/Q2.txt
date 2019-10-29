@@ -1,0 +1,5 @@
+1. ArrayList is a data structure that stores elements in an array, which allows access by index in O(1) time. 
+On the other hand, LinkedList stores both data and address of next and previous node. So to retireve an element, you have to 
+iterate LinkedList with O(N) time.
+2. removing and adding elements is faster in LinkedList than ArrayList. Because ArrayList needs to rearrange the whole list which is 
+O(N)time and LinkedList needs only change the address to point to mentioned elements which is O(1) time.
